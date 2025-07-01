@@ -1,0 +1,10 @@
+services:
+  dns_server:
+    build:
+      context: .
+      dockerfile: dns_random.Dockerfile
+    volumes:
+      - ./prod/:/app/
+    ports:
+      - "53:53/udp"
+    restart: unless-stopped
